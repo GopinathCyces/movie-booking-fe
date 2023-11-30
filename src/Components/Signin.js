@@ -1,26 +1,36 @@
 import { TextField } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 export default function Signin() {
+  const navigate = useNavigate()
+  const [name, setName] = useState("") 
+
+  function Signup(){
+    localStorage.setItem("name",name)
+    navigate("/movies")
+  }
   return (
-    <div className="login-outer">
-      <div className="login">
-        <h1>SignIn</h1>
+    <div className="signup-outer">
+      <form className="signup" onSubmit={()=>Signup()}>
+        <h1 style={{fontWeight:"700"}}>Sign Up</h1>
         <p>Lorem ipsum dolor sit amet adipiscing elit. </p>
-        <TextField
-          id="outlined-basic"
-          label="Enter Your Name"
+        <TextField 
+          label="Name"
           variant="outlined"
+          value={name}
+          onChange={(e)=>setName(e.target.value)}
           required
         />
-        <TextField
-          id="outlined-basic"
-          label="Enter Your Password"
+        <TextField 
+          label="Password"
           variant="outlined"
+          type="password"
+          required
         />
-        <Button variant="dark">Dark</Button>
-      </div>
+        <Button type="submit" variant="dark">Sign up</Button>
+      </form>
     </div>
   );
 }

@@ -1,11 +1,168 @@
-
-.login-outer{
+/* Sign Up */
+.signup-outer {
   /* to align login page */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
 }
 
-.login {
+.signup {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: stretch; 
+  align-items: stretch;
+  text-align: center;
+  gap: 1rem;
+  width: 40%;
+}
+
+/* Movies */
+.moviesHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 30px;
+}
+
+.moviesBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 30px;
+  gap: 1rem;
+}
+
+/* Booking */
+.Booking-outer {
+  min-height: 100vh;
+  display: flex;
+}
+
+.side-nav {
+  padding: 25px;
+  border-right: solid 1px black;
+}
+
+.navss {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  top: 80px;
+  gap: 0.3rem;
+  border-bottom: 1px solid;
+  padding-bottom: 20px;
+}
+
+.navss-btns {
+  padding: 5px;
+  background-color: black;
+  color: white;
+}
+
+.navss-btns-da {
+  padding: 5px;
+  background-color: white;
+  color: black;
+}
+
+.navss-btns-data {
+  background-color: black;
+  color: white;
+}
+
+.navss-btns:focus {
+  background-color: black;
+  color: white;
+}
+
+.main-space {
+  padding: 25px;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.timings {
+  width: 80%;
+  position: relative;
+  top: 110px;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  column-gap: 6rem;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.time-btn {
+  padding: 15px 30px;
+  color: black;
+  border: none;
+}
+.time-btn:hover {
+  background-color: rgb(21, 255, 0);
+}
+.time-btn:focus {
+  background-color: rgb(21, 255, 0);
+}
+
+/* Account */
+.account-outer {
+  min-height: 100vh;
+  display: flex;
+}
+
+.account-main-space {
+  padding: 25px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.account-inside {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* seats */
+.seats-outer {
+  min-height: 100vh;
+  display: flex;
+}
+
+.seats-main-outer{
+  display: flex;
+    justify-content: center;
+}
+
+.seats-main {
+  width: 60%;
+  position: relative;
+  top: 110px;
+  padding: 25px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.seat {
+  cursor: pointer;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(230, 230, 230); 
+  border: none;
+}
+
+.seat:hover {
+  background-color: rgb(21, 255, 0);
+}
+.seat:focus {
+  background-color: rgb(21, 255, 0);
 }
