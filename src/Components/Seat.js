@@ -6,12 +6,30 @@ export default function Seat() {
     const timing=localStorage.getItem("timing") 
     let screen=screensData.filter((data)=>timing===data.time) 
     let currentScreen=screen[0].seats
-    console.log(currentScreen); 
+    // console.log(currentScreen); 
+    
+    // let bookedSeats=[1,2,5,4] 
+    let [bookedSeats,setBookedSeats]=useState([2,5,4])
+    
+    function seatsBooking(id){
+      if (!bookedSeats.includes(id)) {
+        console.log("ADDED");
+        // bookedSeats.push(id)
+        setBookedSeats([...bookedSeats,id])
+        console.log(bookedSeats);
+      }
+    } 
 
-    let [clr,setClr]=useState(false)
-    // useEffect(()=>{
+    // function seatsBooking(id){
+    //   if (!bookedSeats.includes(id)) {
+    //     console.log("ADDED");
+    //     setBookedSeats(...bookedSeats,id)
+    //     console.log(bookedSeats);
+    //   }
+    // }
 
-    // },[])
+
+    
   return (
     <div className="seats-outer">
       <div className="col-lg-3">
@@ -21,7 +39,7 @@ export default function Seat() {
         <div className="seats-main">
         {currentScreen.map((d,idx)=>{
             return(
-                <button className="seat">{d.name}</button>
+                <button key={idx} disabled={d.Booked}  className={bookedSeats.includes(d.id) ? "seatAdded":"seat"} onClick={()=>seatsBooking(d.id)}>{d.name} {}</button>
             )
         })}
         </div>

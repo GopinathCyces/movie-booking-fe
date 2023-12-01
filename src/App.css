@@ -79,16 +79,21 @@
 }
 
 .main-space {
-  padding: 25px;
-  min-height: 100vh;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
-.timings {
-  width: 80%;
   position: relative;
-  top: 110px;
+  top: 60px;
+  min-height: 100vh; 
+}
+
+.main-space-inside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.timings {
+  margin-top: 25px;
+  width: 80%;
   display: flex;
   flex-direction: row;
   gap: 2rem;
@@ -135,34 +140,47 @@
   display: flex;
 }
 
-.seats-main-outer{
+.seats-main-outer {
   display: flex;
-    justify-content: center;
+  justify-content: center;
 }
 
 .seats-main {
-  width: 60%;
+  width: 75%;
   position: relative;
   top: 110px;
   padding: 25px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 1rem;
+  row-gap: 2rem;
+  column-gap: 35px;
+  align-content: flex-start;
+  justify-content: flex-start;
 }
 
-.seat {
+.seatAdded {
+  font-size: 12px;
   cursor: pointer;
   text-align: center;
-  width: 30px;
-  height: 30px;
-  background-color: rgb(230, 230, 230); 
+  width: 34px;
+  height: 34px;
+  background-color: rgb(21, 255, 0);
+  border: none;
+}
+.seat {
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  width: 34px;
+  height: 34px;
+  background-color: rgb(230, 230, 230);
   border: none;
 }
 
 .seat:hover {
   background-color: rgb(21, 255, 0);
 }
-.seat:focus {
+/* .seat:focus {
   background-color: rgb(21, 255, 0);
-}
+} */

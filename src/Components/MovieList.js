@@ -42,6 +42,10 @@ export default function MovieList() {
       price: 180,
     },
   ] 
+  function goToTimings(name){
+    localStorage.setItem("movieName",name);
+    navigate("/timings")
+  }
   return (
     <div>
       <div className="moviesHead">
@@ -58,7 +62,7 @@ export default function MovieList() {
       <div className="moviesBox">
         {datas.map((data, idx) => {
           return (
-            <Card key={idx} style={{ width: "17rem",cursor:"pointer" }} onClick={()=>navigate("/timings")}>
+            <Card key={idx} style={{ width: "17rem",cursor:"pointer" }} onClick={()=>goToTimings(data.name)}>
               <Card.Img style={{height: "27rem"}} variant="top" src={data.url} />
               <Card.Body>
                 <Card.Title style={{fontWeight:"700"}}  >{data.name}</Card.Title>

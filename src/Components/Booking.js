@@ -1,27 +1,29 @@
-import React, { useEffect, useState } from "react"; 
+import React, { useEffect, useState } from "react";
 import Sidenav from "./Sidenav";
 import { useNavigate } from "react-router-dom";
 
 export default function Booking() {
   const [timing, setTiming] = useState("");
-  const  navigate=useNavigate()
+  const movieName = localStorage.getItem("name");
+  const navigate = useNavigate();
   console.log(timing);
-  localStorage.setItem("timing",timing)
-  
+  localStorage.setItem("timing", timing);
 
-  async function toSeats(time){
-    await setTiming(time)
-    navigate("/seats")
+  async function toSeats(time) {
+    await setTiming(time);
+    navigate("/seats");
   }
   return (
     <div className="Booking-outer">
-      <div className="col-lg-3" >
+      <div className="col-lg-3">
         <Sidenav />
       </div>
 
       <div className="main-space col-lg-9">
+      <h1 style={{ textAlign:"center" }}>{movieName}</h1>
+      <div className="main-space-inside">
         <div className="timings">
-          <button className="time-btn" onClick={() => toSeats("9.00 AM") }>
+          <button className="time-btn" onClick={() => toSeats("9.00 AM")}>
             9.00 AM
           </button>
           <button className="time-btn" onClick={() => toSeats("10.15 AM")}>
@@ -45,7 +47,10 @@ export default function Booking() {
           <button className="time-btn" onClick={() => toSeats("10.30 PM")}>
             10.30 PM
           </button>
-        </div>
+        </div> 
+      </div>
+      <p>Please Select Your Time Slot</p>
+        
       </div>
     </div>
   );
